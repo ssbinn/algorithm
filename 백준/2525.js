@@ -18,4 +18,4 @@ function solution(h, m, t) {
     console.log(h, m)
 }
 // solution(h, m, t)
-solution(+h, +m, +t) // + 연산자를 붙여야 결과가 나오는 이유?
+solution(+h, +m, +t) // number로 형변환. + 연산자로 붙여야 결과가 나옴
