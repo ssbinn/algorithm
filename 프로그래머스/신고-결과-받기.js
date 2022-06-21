@@ -1,27 +1,28 @@
-unction solution(id_list, report, k) {
-
-    const report_list = {}
-    const answer = new Array(id_list.length);
-    answer.fill(0);
-
-    id_list.map(user => {
-        report_list[user] = [];
+function solution(id_list, report, k) {
+    
+    const list = {};
+    const answer = new Array(id_list.length).fill(0);
+    
+    id_list.map((id) => {
+        list[id] = [];  // { muzi: [], ...}
     })
-
-    report.map(user => {
+    
+    report.map((user) => {
         const [a, b] = user.split(' ');
-        if (!report_list[b].includes(a)) {
-            report_list[b].push(a);
+        if(!list[b].includes(a)) {
+            list[b].push(a);
         }
+        // ID: ID를 신고한 user
+        // {frodo: [ 'muzi', 'apeach' ]}
     })
-
-    for (const key in report_list) {
-        if (report_list[key].length >= k) {
-            report_list[key].map(user => {
+    
+    for (const item in list) {
+        if(list[item].length >= k) {
+            list[item].map((user) => {
                 answer[id_list.indexOf(user)] += 1;
-            })
+            })  
         }
     }
-
+    
     return answer;
 }
