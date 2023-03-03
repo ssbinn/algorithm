@@ -12,3 +12,6 @@ ON SUB.ID = CAR_ID
 WHERE SUB.CNT >= 5 AND YEAR(START_DATE) = 2022 AND MONTH(START_DATE) IN (8,9,10)
 GROUP BY MONTH(START_DATE), CAR_ID
 ORDER BY MONTH(START_DATE), CAR_ID DESC
+
+-- 특정 월의 총 대여 횟수가 0인 경우에는 결과에서 제외해주세요.
+# 위 조건에 대한 좋은 쿼리문 찾아야 함
